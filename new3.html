@@ -1,0 +1,26 @@
+<style>
+    /* 1. 強制讓整個網頁背景變成你的圖片 */
+    body, .wp-site-blocks, .entry-content {
+        background-image: url('https://easyyoyo.wordpress.com/wp-content/uploads/2025/10/lineage.jpg') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-attachment: fixed !important;
+        margin: 0 !important;
+    }
+
+    /* 2. 隱藏捲軸（請小心使用，內容過長會看不見） */
+    html, body {
+        overflow: hidden !important;
+        height: 100vh !important;
+    }
+
+    /* 3. 隱藏 WordPress 預設的標題或選單（如果有的話） */
+    header, footer, .entry-title {
+        display: none !important;
+    }
+</style>
+
+<script>
+    // 禁用右鍵
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
