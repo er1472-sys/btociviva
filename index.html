@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html style="margin:0;padding:0;height:100%;width:100%;overflow:hidden;">
+<html>
 <head>
     <meta charset="UTF-8">
     <style>
-        /* 強制所有元素都不准出現捲軸 */
-        * {
-            margin: 0;
-            padding: 0;
-            overflow: hidden !important; 
-        }
-        body {
-            width: 100%;
-            height: 100%;
+        /* 1. 全域強制隱藏捲軸 */
+        html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important; /* 核心：禁止捲軸 */
+            width: 100% !important;
+            height: 100% !important;
             background-color: #000;
         }
-        .bg {
-            width: 100vw;
-            height: 100vh;
+
+        /* 2. 背景容器：稍微縮小 1 像素，防止擠壓出捲軸 */
+        .bg-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('https://easyyoyo.wordpress.com/wp-content/uploads/2025/10/lineage.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        /* 針對舊版 IE 的特殊補丁 */
+        body {
+            -ms-overflow-style: none; /* 隱藏 IE/Edge 的捲軸 */
         }
     </style>
 </head>
-<body oncontextmenu="return false;">
-    <div class="bg"></div>
+<body scroll="no" oncontextmenu="return false;">
+    <div class="bg-container"></div>
 </body>
 </html>
