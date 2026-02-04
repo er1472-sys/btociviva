@@ -1,9 +1,30 @@
 <!DOCTYPE html>
-<html style="height:100%;width:100%;">
-<head><meta charset="UTF-8"></head>
-<body style="margin:0;padding:0;height:100%;width:100%;background:#000;overflow:hidden;">
-    <img src="https://easyyoyo.wordpress.com/wp-content/uploads/2025/10/lineage.jpg" 
-         style="width:100%; height:100%; object-fit:cover; display:block;" 
-         oncontextmenu="return false;">
+<html style="margin:0;padding:0;height:100%;width:100%;overflow:hidden;">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 強制所有元素都不准出現捲軸 */
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden !important; 
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+        .bg {
+            width: 100vw;
+            height: 100vh;
+            background-image: url('https://easyyoyo.wordpress.com/wp-content/uploads/2025/10/lineage.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <div class="bg"></div>
 </body>
 </html>
