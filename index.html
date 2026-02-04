@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        /* 這裡定義網頁基礎樣式 */
-        body, html { 
-            margin: 0; 
-            padding: 0; 
-            width: 100%; 
-            height: 100%; 
-            overflow: hidden; 
-            background: #000; 
+        /* 所有的設定都要放在 style 這兩個字中間才不會紅底 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        /* 這裡定義背景圖樣式 */
-        .bg {
-            width: 100vw; 
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .bg-container {
+            width: 100vw;
             height: 100vh;
-            /* 這裡必須包含圖片網址，且結尾要有 } */
             background-image: url('https://easyyoyo.wordpress.com/wp-content/uploads/2025/10/lineage.jpg');
-            background-size: cover; 
+            background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }
     </style>
 </head>
 <body oncontextmenu="return false;">
-    <div class="bg"></div>
+
+    <div class="bg-container"></div>
+
 </body>
 </html>
