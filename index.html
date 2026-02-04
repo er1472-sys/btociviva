@@ -1,39 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html style="margin:0;padding:0;height:100%;width:100%;overflow:hidden;">
 <head>
     <meta charset="UTF-8">
     <style>
-        /* 1. 全域強制隱藏捲軸 */
-        html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            overflow: hidden !important; /* 核心：禁止捲軸 */
-            width: 100% !important;
-            height: 100% !important;
-            background-color: #000;
+        /* 強制移除所有邊界，防止捲軸出現 */
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden !important;
         }
 
-        /* 2. 背景容器：稍微縮小 1 像素，防止擠壓出捲軸 */
-        .bg-container {
-            position: absolute;
-            top: 0;
-            left: 0;
+        body {
             width: 100%;
             height: 100%;
-            background-image: url('https://easyyoyo.wordpress.com/wp-content/uploads/2025/10/lineage.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
-
-        /* 針對舊版 IE 的特殊補丁 */
-        body {
-            -ms-overflow-style: none; /* 隱藏 IE/Edge 的捲軸 */
+            /* 黑色底色防止圖片載入前的閃爍 */
+            background: #000 url('https://easyyoyo.wordpress.com/wp-content/uploads/2025/10/lineage.jpg') no-repeat center center;
+            
+            /* 核心：強行讓圖片寬高 100% 適應視窗大小 */
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            
+            /* 針對舊版登入器核心 (IE) 的捲軸處理 */
+            -ms-overflow-style: none;
         }
     </style>
 </head>
 <body scroll="no" oncontextmenu="return false;">
-    <div class="bg-container"></div>
 </body>
 </html>
