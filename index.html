@@ -6,23 +6,25 @@
         * {
             margin: 0;
             padding: 0;
-            overflow: hidden !important; /* 絕對不准出現拉條 */
+            overflow: hidden !important; 
         }
         body {
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background-color: #000;
-            /* 使用 flex 讓內容在視窗中置中 */
             display: flex;
             justify-content: center;
             align-items: center;
         }
         img {
-            /* 這是關鍵：讓圖片的寬或高最大不超過視窗的 100% */
-            max-width: 100%;
-            max-height: 100%;
-            /* 保持圖片比例縮小，不變形 */
+            /* 強制圖片寬度或高度填滿容器 */
+            width: 100%;
+            height: 100%;
+            
+            /* 關鍵：object-fit: contain 會讓圖片在維持比例的情況下，
+               自動縮放至最大範圍，且不會被裁切 */
             object-fit: contain; 
+            
             border: none;
         }
     </style>
@@ -33,8 +35,3 @@
 
 </body>
 </html>
-
-
-
-
-
